@@ -16,9 +16,9 @@ function WidgetHandler({ id, widget, deleteWidget }) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               {" "}
               <polyline points="3 6 5 6 21 6" />{" "}
@@ -45,9 +45,9 @@ function WidgetHandler({ id, widget, deleteWidget }) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               {" "}
               <polyline points="3 6 5 6 21 6" />{" "}

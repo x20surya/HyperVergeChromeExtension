@@ -19,7 +19,7 @@ function Sidebar({ addHandler }) {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Widgets">
             <CommandItem>
-              <span>Calendar</span>
+              <span>Pomodoro Timer</span>
               <button
                 onClick={() => {
                   addHandler("widget1");

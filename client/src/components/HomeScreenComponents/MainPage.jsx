@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { ModeToggle } from "../mode-toggle";
+import Sheets from "../Widgets/Sheets/Sheet";
 
 function MainPage() {
   const [widgets, setWidgets] = useState([]);
@@ -42,6 +43,7 @@ function MainPage() {
           <div className="fixed right-5 top-5">
             <ModeToggle />
           </div>
+          <Sheets/>
           {widgets.map((widget) => (
             <WidgetHandler
               key={widget.id}

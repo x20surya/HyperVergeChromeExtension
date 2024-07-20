@@ -41,10 +41,21 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Calculator</span>
+              <span>Announcments</span>
               <button
                 onClick={() => {
                   addHandler("widget3");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
+            <CommandItem>
+              <span>Book Quote - Read by X</span>
+              <button
+                onClick={() => {
+                  addHandler("widget4");
                 }}
                 variant="ghost"
               >

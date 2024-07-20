@@ -1,18 +1,18 @@
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import AnnouncementCards from "./AnnouncementCards";
 
 const Announcements = (props) => {
-    const [announcementData, setData] = useState();
+  const [announcementData, setData] = useState();
 
-    /*SheetDB link, to get this link log into SheetDB.io
+  /*SheetDB link, to get this link log into SheetDB.io
      enter the spreadsheet link
      and paste the API link in the constant below
     */
@@ -20,17 +20,18 @@ const Announcements = (props) => {
 
     const getData = () => {
         fetch(GoogleScriptLink)
+
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         setData(data);
-    });
-    }
-      console.log("Ann");
-      console.log(announcementData);
-    useEffect(()=>{
-        getData();
-    },[])
+      });
+  };
+  console.log("Ann");
+  console.log(announcementData);
+  useEffect(() => {
+    getData();
+  }, []);
 
     return(
         <Card>
@@ -51,5 +52,6 @@ const Announcements = (props) => {
 </Card>
     )
 }
+
 
 export default Announcements;

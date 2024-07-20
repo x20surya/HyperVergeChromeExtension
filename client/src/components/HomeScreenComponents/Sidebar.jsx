@@ -30,7 +30,7 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Search Emoji</span>
+              <span>Daily check list</span>
               <button
                 onClick={() => {
                   addHandler("widget2");

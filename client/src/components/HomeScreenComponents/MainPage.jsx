@@ -1,13 +1,8 @@
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
 import WidgetHandler from "./WidgetHandler";
-import Content from "./Content";
 import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
+import { ModeToggle } from "../mode-toggle";
 
 function MainPage() {
   const [widgets, setWidgets] = useState([]);
@@ -43,7 +38,10 @@ function MainPage() {
         <div className="flex h-full justify-center p-6 w-1/4 border-r">
           <Sidebar addHandler={addHandler} />
         </div>
-        <div className="flex flex-col flex-wrap h-full items-center justify-center px-6 w-3/4 gap-10">
+        <div className="flex flex-col flex-wrap h-full items-center justify-center gap-10 w-3/4">
+          <div className="fixed right-5 top-5">
+            <ModeToggle />
+          </div>
           {widgets.map((widget) => (
             <WidgetHandler
               key={widget.id}

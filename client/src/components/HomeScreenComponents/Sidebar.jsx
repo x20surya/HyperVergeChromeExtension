@@ -6,11 +6,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 
-import { Button } from "@/components/ui/button";
-import DemoComponent1 from "../demoComponent1";
 
 function Sidebar({ addHandler }) {
   return (

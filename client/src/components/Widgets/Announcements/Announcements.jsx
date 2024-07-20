@@ -16,10 +16,10 @@ const Announcements = (props) => {
      enter the spreadsheet link
      and paste the API link in the constant below
     */
-   const SheetDBLink = 'https://sheetdb.io/api/v1/dzd16sj3tzabl';
+   const GoogleScriptLink = 'https://script.google.com/macros/s/AKfycbxTQgS35Kd24HtSobiDsFAWmAH5-Ri55kGOJcl_-MXVZa1cg0e75lsOQgBQPV2Qs4vzgw/exec?action=getAnn';
 
     const getData = () => {
-        fetch(SheetDBLink)
+        fetch(GoogleScriptLink)
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
@@ -41,10 +41,10 @@ const Announcements = (props) => {
   {(announcementData)? announcementData.map((announcements) => {
     return(
         <AnnouncementCards
-          key = {announcements.id}
-          heading = {announcements.Heading}
-          text = {announcements.Message}
-          status = {announcements.Status}
+          key = {announcements.key}
+          heading = {announcements.heading}
+          text = {announcements.message}
+          status = {announcements.status}
         />
     )
   }) : "Loading..."}

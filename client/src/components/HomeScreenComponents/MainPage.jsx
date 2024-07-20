@@ -17,8 +17,8 @@ function MainPage() {
     ]);
   };
   const deleteWidget = (id) => {
-    const filteredNotes = widgets.filter((widget) => widget.id !== id);
-    setWidgets(filteredNotes);
+    const filteredWidgets = widgets.filter((widget) => widget.id !== id);
+    setWidgets(filteredWidgets);
   };
 
   useEffect(() => {

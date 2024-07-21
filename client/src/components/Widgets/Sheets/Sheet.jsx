@@ -21,7 +21,7 @@ const Sheets = (props) => {
      enter the spreadsheet link
      and paste the API link in the constant below
     */
-   const GoogleScriptLink = 'https://script.google.com/macros/s/AKfycbzuauULK8Lpymq4JtiFlDA92HWM-0ODF_TtonYiGQAivyIO-2kAblgZYL9Gs5W5Ldqz4A/exec?action=getSheet';
+   const GoogleScriptLink = 'https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=getSheet';
 
     const getData = () => {
         fetch(GoogleScriptLink)

@@ -52,7 +52,7 @@ const IssueTracker = (props) => {
       return;
     } else {
       fetch(
-        "https://script.google.com/macros/s/AKfycbyXPfOJu7M-IZ4QR95jY5drYX4VubJ7pb27GtBF92kKv9gFj7wWSKVA1TsKUMqXN4YzZQ/exec?action=addIssue",
+        "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=addIssue",
         {
           method: "POST",
           body: JSON.stringify(obj),
@@ -75,16 +75,15 @@ const IssueTracker = (props) => {
     } else {
       var obj = { key: id };
       fetch(
-        "https://script.google.com/macros/s/AKfycbyXPfOJu7M-IZ4QR95jY5drYX4VubJ7pb27GtBF92kKv9gFj7wWSKVA1TsKUMqXN4YzZQ/exec?action=addIssue",
+        "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=checkIssueStatus",
         {
           method: "POST",
           body: JSON.stringify(obj),
         }
-      ).then((e) => {
-        console.log("checked");
-        console.log(e);
-      });
-      setId("");
+      ).then(response => response.text())
+      .then(data => 
+        { console.log(data)
+         setStatus(data)})
     }
   };
 
@@ -158,6 +157,7 @@ const IssueTracker = (props) => {
                 value={id}
               />
               <Button variant="secondary" onClick={checkStatus}>Check Issue Status</Button>
+              {(status)? <h1>Status for Issue {id} = {status}</h1> : ""}
             </form>
           </CardContent>
           <CardFooter>

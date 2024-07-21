@@ -18,7 +18,7 @@ import {
        and paste the API link in the constant below
       */
     const GoogleScriptLink =
-      "https://script.google.com/macros/s/AKfycbzrV9rdqFN_SPTIdjoEKpE2qox2NkOPgLM7fs1cst0z3djqFOKY6TFw9fYHXT-t9nGgxQ/exec?action=getNotice";
+      "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=getNotice";
   
     const getData = () => {
       fetch(GoogleScriptLink)

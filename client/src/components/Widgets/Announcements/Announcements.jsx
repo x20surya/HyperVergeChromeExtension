@@ -12,12 +12,9 @@ import AnnouncementCards from "./AnnouncementCards";
 const Announcements = (props) => {
   const [announcementData, setData] = useState();
 
-  /*SheetDB link, to get this link log into SheetDB.io
-     enter the spreadsheet link
-     and paste the API link in the constant below
-    */
+/* */
   const GoogleScriptLink =
-    "https://script.google.com/macros/s/AKfycbxTQgS35Kd24HtSobiDsFAWmAH5-Ri55kGOJcl_-MXVZa1cg0e75lsOQgBQPV2Qs4vzgw/exec?action=getAnn";
+    "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=getAnn";
 
   const getData = () => {
     fetch(GoogleScriptLink)

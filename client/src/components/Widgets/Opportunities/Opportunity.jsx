@@ -16,7 +16,7 @@ const Opportunity = (props) => {
   const [oppData, setOppData] = useState();
 
   const GoogleScriptLink =
-    "https://script.google.com/macros/s/AKfycbzKFtkZ4K94_dRVUfLBBNorHcS2XwLrYKN14sd6GxKxQPJ__9BWU1gGr0rBezoHHqUGjg/exec?action=getOpp";
+    "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=getOpp";
 
   const getData = () => {
     fetch(GoogleScriptLink)

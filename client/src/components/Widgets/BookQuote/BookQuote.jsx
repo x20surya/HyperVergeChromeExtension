@@ -13,7 +13,7 @@ function BookQuote() {
 const [data, setData] = useState();
 
   const GoogleScriptLink =
-  "https://script.google.com/macros/s/AKfycbwYR10OcabZfe0r8GT04MRWegFl-34VXYZJepka95oHEPn6WfN109emSv0cTQD4epzoIA/exec?action=getQuote";
+  "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=getQuote";
 
 const getData = () => {
   fetch(GoogleScriptLink)

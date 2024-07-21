@@ -10,6 +10,7 @@ import {
   swap,
 } from "drag-n-drop-grid";
 
+
 function MainPage() {
   const [widgets, setWidgets] = useState([]);
 

@@ -3,7 +3,6 @@ import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { ModeToggle } from "../mode-toggle";
-import IssueTracker from "../Widgets/IssueTracker/IssueTracker";
 
 function MainPage() {
   const [widgets, setWidgets] = useState([]);
@@ -43,7 +42,6 @@ function MainPage() {
           <div className="fixed right-5 top-5">
             <ModeToggle />
           </div>
-          <IssueTracker/>
           {widgets.map((widget) => (
             <WidgetHandler
               key={widget.id}

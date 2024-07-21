@@ -16,7 +16,7 @@ Select Toolbar > Extensions > AppScript
 
 Connect a google project and create OAuth2 credentials
 
-Copy the Appscript code from AppScriptCode.txt to console
+Copy the Appscript code from `AppScriptCode.txt` to console
 
 and deply
 

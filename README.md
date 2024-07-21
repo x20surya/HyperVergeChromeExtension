@@ -4,6 +4,8 @@
 
 `npm i --legacy-peer-deps`
 
+replace `scriptLink` with your own script link inside `constants/credentials.js`
+
 `npm run build`
 
 Locate to the dist folder and unload the package in chrome extensinon developer mode.

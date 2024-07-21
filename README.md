@@ -1,10 +1,12 @@
 # Instructions To Run this repo
 
-cd client
+`cd client`
 
-npm i --legacy-peer-deps
+`npm i --legacy-peer-deps`
 
-npm run build
+`npm run build`
+
+Locate to the dist folder and unload the package in chrome extensinon developer mode.
 
 # For AppScript
 

@@ -14,15 +14,14 @@ const IssueTracker = (props) => {
     const [title, setTitle] = useState("")
     const [des, setDes] = useState("")
     const [contactInfo, setContactInfo] = useState("")
+    const [id, setId] = useState("")
+    const [status, setStatus] = useState("")
+
+    const[isChecking, setIsChecking] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("New Opp Uploaded")
-        console.log(name)
-        console.log(des)
         const id = uuid()
-        console.log("id ===")
-        console.log(id)
         const date = new Date()
         const time = date.getHours().toString() +"-"+ date.getMinutes().toString() +"-"+ date.getSeconds().toString() +"  "+date.getDate().toString() +"/"+(date.getMonth() + 1).toString()+"/"+ date.getFullYear().toString()
         console.log(time)
@@ -51,7 +50,30 @@ const IssueTracker = (props) => {
         }
     }
 
+    const checkStatus = (e) => {
+        e.preventDefault()
+        if(id == ""){
+            return
+        }else{
+            var obj = { key : id}
+            fetch("https://script.google.com/macros/s/AKfycbyXPfOJu7M-IZ4QR95jY5drYX4VubJ7pb27GtBF92kKv9gFj7wWSKVA1TsKUMqXN4YzZQ/exec?action=addIssue", {
+                method : "POST",
+                body : JSON.stringify(obj)
+            }).then((e)=>{
+                console.log("checked")
+                console.log(e.body)
+            })
+            setId("");
+        }
+    }
+
+    const changeInput = () => {
+        
+    }
+
     return(
+        <>
+        {(isChecking)?
         <>
             <form
             onSubmit={handleSubmit} className="h-full">
@@ -79,7 +101,24 @@ const IssueTracker = (props) => {
                     onClick={handleSubmit}
                 >Post Issue</button>
             </form>
-
+            <button onClick={()=>{setIsChecking(!(isChecking))}}>Check Issue Status</button>
+        </>
+        :
+        <>
+            <form
+            onSubmit={checkStatus} className="h-full">
+                <input
+                    placeholder="Enter Issue Key"
+                    onChange={(e)=>{setId(e.target.value)}}
+                    value={id}
+                />
+                <button
+                    onClick={checkStatus}
+                >Check Issue Status</button>
+            </form>
+            <button onClick={()=>{setIsChecking(!(isChecking))}}>Report Issue</button>
+            </>
+            }
         </>
     )
 }

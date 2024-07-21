@@ -9,7 +9,6 @@ import {
   GridItem,
   swap,
 } from "drag-n-drop-grid";
-import Notice from "../Widgets/Notice/Notice";
 
 function MainPage() {
   const [widgets, setWidgets] = useState([]);

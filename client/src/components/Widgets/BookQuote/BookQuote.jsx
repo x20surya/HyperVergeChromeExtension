@@ -7,28 +7,28 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { Label } from "@radix-ui/react-label";
 
 function BookQuote() {
 
-  const [book, setBook] = useState("");
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
+const [data, setData] = useState();
 
-  useEffect(() => {
-    axios
-      .get("https://recite.onrender.com/random/quote-from-db") // Replace with your API endpoint
-      .then((response) => {
-        const data = response.data;
-        setBook(data.book);
-        setQuote(data.quote);
-        setAuthor(data.author);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const GoogleScriptLink =
+  "https://script.google.com/macros/s/AKfycbwYR10OcabZfe0r8GT04MRWegFl-34VXYZJepka95oHEPn6WfN109emSv0cTQD4epzoIA/exec?action=getQuote";
+
+const getData = () => {
+  fetch(GoogleScriptLink)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setData(data);
+    });
+};
+
+
+useEffect(() => {
+  getData();
+}, []);
+
 
   return (
     <Card className="border-none">
@@ -37,9 +37,11 @@ function BookQuote() {
         <CardDescription>get a random quote from a book</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Book : {book}</p>
-        <p>Quote: {quote}</p>
-        <p>Author : {author}</p>
+        {(data)?<>
+        <p>Book : {data[0].book}</p>
+        <p>Quote: {data[0].quotw}</p>
+        <p>Author : {data[0].author}</p></>
+         : ""}
       </CardContent>
     </Card>
   );

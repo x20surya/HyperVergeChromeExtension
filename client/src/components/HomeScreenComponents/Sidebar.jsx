@@ -7,6 +7,19 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import {
+  BookAIcon,
+  BotIcon,
+  BugIcon,
+  CheckCheckIcon,
+  CpuIcon,
+  GemIcon,
+  InfoIcon,
+  Music2Icon,
+  PaperclipIcon,
+  SheetIcon,
+  TimerIcon,
+} from "lucide-react";
 
 function Sidebar({ addHandler }) {
   return (
@@ -18,7 +31,10 @@ function Sidebar({ addHandler }) {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Widgets">
             <CommandItem>
-              <span>Pomodoro Timer</span>
+              <div className="flex items-center">
+                <TimerIcon className="pr-1" />
+                <span>Pomodoro Timer</span>
+              </div>
               <button
                 onClick={() => {
                   addHandler("widget1");
@@ -29,7 +45,11 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Daily check list</span>
+              <div className="flex items-center">
+                <CheckCheckIcon className="pr-1" />
+                <span>Daily check list</span>
+              </div>
+
               <button
                 onClick={() => {
                   addHandler("widget2");
@@ -40,7 +60,11 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Announcments</span>
+              <div className="flex items-center">
+                <InfoIcon className="pr-1" />
+                <span>Announcments</span>
+              </div>
+
               <button
                 onClick={() => {
                   addHandler("widget3");
@@ -51,7 +75,11 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Book Quote - Read by X</span>
+              <div className="flex items-center">
+                <BookAIcon className="pr-1" />
+                <span>Book Quote - Read by X</span>
+              </div>
+
               <button
                 onClick={() => {
                   addHandler("widget4");
@@ -62,7 +90,10 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Forms</span>
+              <div className="flex items-center">
+                <PaperclipIcon className="pr-1" />
+                <span>Forms</span>
+              </div>
               <button
                 onClick={() => {
                   addHandler("widget5");
@@ -73,7 +104,11 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Sheets</span>
+              <div className="flex items-center">
+                <SheetIcon className="pr-1" />
+                <span>Sheets</span>
+              </div>
+
               <button
                 onClick={() => {
                   addHandler("widget6");
@@ -84,7 +119,11 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Chat Bot</span>
+              <div className="flex items-center">
+                <BotIcon className="pr-1" />
+                <span>AI Chat Bot</span>
+              </div>
+
               <button
                 onClick={() => {
                   addHandler("widget7");
@@ -95,7 +134,10 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Spotify Music</span>
+              <div className="flex items-center">
+                <Music2Icon className="pr-1" />
+                <span>Spotify Music</span>
+              </div>
               <button
                 onClick={() => {
                   addHandler("widget8");
@@ -106,7 +148,10 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Issue Tracker</span>
+              <div className="flex items-center">
+                <BugIcon className="pr-1" />
+                <span>Issue Tracker</span>
+              </div>
               <button
                 onClick={() => {
                   addHandler("widget9");
@@ -117,7 +162,10 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Opportunities</span>
+              <div className="flex items-center">
+                <CpuIcon className="pr-1" />
+                <span>Opportunities</span>
+              </div>
               <button
                 onClick={() => {
                   addHandler("widget10");
@@ -128,7 +176,10 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Notice</span>
+              <div className="flex items-center">
+                <GemIcon className="pr-1" />
+                <span>Notice</span>
+              </div>
               <button
                 onClick={() => {
                   addHandler("widget11");

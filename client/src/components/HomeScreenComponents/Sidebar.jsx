@@ -8,7 +8,6 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 
-
 function Sidebar({ addHandler }) {
   return (
     <div className="flex flex-col gap-5 w-full items-center">
@@ -122,6 +121,17 @@ function Sidebar({ addHandler }) {
               <button
                 onClick={() => {
                   addHandler("widget10");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
+            <CommandItem>
+              <span>Notice</span>
+              <button
+                onClick={() => {
+                  addHandler("widget11");
                 }}
                 variant="ghost"
               >

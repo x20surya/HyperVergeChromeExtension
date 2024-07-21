@@ -13,7 +13,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget1") {
       return (
-        <div className="w-[300px] h-[400px] border absolute rounded-lg top-0 left-0 group">
+        <div className="w-[95%] h-[90%] border absolute rounded-lg top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -42,7 +42,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget2") {
       return (
-        <div className="w-[400px] h-[450px] border absolute rounded-lg top-0 left-0 group">
+        <div className="w-[95%] h-[90%] border absolute rounded-lg top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -72,7 +72,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget3") {
       return (
-        <div className="w-[400px] h-[450px] border absolute rounded-lg top-0 left-0 group">
+        <div className="w-[95%] h-[90%] border absolute rounded-lg top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -101,7 +101,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget4") {
       return (
-        <div className="w-[400px] h-[300px] border rounded-lg absolute top-0 left-0 group">
+        <div className="w-[95%] h-[90%] border rounded-lg absolute top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -130,7 +130,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget5") {
       return (
-        <div className="w-[400px] h-[500px] border rounded-lg absolute top-0 left-0 group">
+        <div className="w-[95%] h-[90%] border rounded-lg absolute top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -159,7 +159,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget6") {
       return (
-        <div className="w-[400px] h-[500px] border rounded-lg absolute top-0 left-0 group">
+        <div className="w-[95%] h-[90%] border rounded-lg absolute top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -188,7 +188,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget7") {
       return (
-        <div className="w-[400px] h-[400px] rounded-lg border absolute top-0 left-0 group">
+        <div className="w-[95%] h-[90%] rounded-lg border absolute top-0 left-0 group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -217,7 +217,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget8") {
       return (
-        <div className="w-[400px] h-[200px] group">
+        <div className="w-[95%] h-[90%] group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -246,7 +246,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget9") {
       return (
-        <div className="w-[400px] h-[400px] group">
+        <div className="w-[95%] h-[90%] group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}
@@ -275,7 +275,7 @@ function WidgetHandler({ id, widget, deleteWidget }) {
   {
     if (widget == "widget10") {
       return (
-        <div className="w-[400px] h-[400px] group">
+        <div className="w-[95%] h-[90%] group">
           <button
             className="absolute top-2 left-2 z-10 invisible group-hover:visible"
             onClick={() => deleteWidget(id)}

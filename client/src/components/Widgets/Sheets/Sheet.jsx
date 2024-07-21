@@ -11,6 +11,11 @@ import SheetCard from "./SheetCard";
 
 const Sheets = (props) => {
     const [sheetData, setData] = useState();
+    const [currentSheet, setCurrentSheet] = useState();
+
+    const updateSheet = (e) => {
+        setCurrentSheet(e)
+    }
 
     /*SheetDB link, to get this link log into SheetDB.io
      enter the spreadsheet link
@@ -23,15 +28,25 @@ const Sheets = (props) => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        setCurrentSheet(data[0])
     });
     }
     useEffect(()=>{
         getData();
     },[])
     return(
-        <>
-  {(sheetData)?(sheetData.map((e)=>{return(<SheetCard key = {e.key} name = {e.name} link = {e.link} status = {e.status}/>)})): "Loading"}
-        </>
+        <div >   
+            <div className=" flex justify-end pr-4 mt-4 w-[100%]">
+            {(sheetData)?(sheetData.map((e)=>{return(
+                
+                <button className=" pl-4 pb-2" onClick={()=>{updateSheet(e)}}>{e.name}</button>
+                
+                )})
+                ): "Loading"}
+            </div>
+            {(currentSheet)? <SheetCard key = {currentSheet.key} name = {currentSheet.name} link = {currentSheet.link} status = {currentSheet.status}/>: "Loading Sheets..."}
+            
+        </div>
     )
 }
 

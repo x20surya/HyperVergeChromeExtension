@@ -18,8 +18,8 @@ const FormCard = (props) => {
                 <CardHeader>
                     <CardTitle>{name}</CardTitle>
                 </CardHeader>
-                <iframe src={link} width="400" height="400">Loading…</iframe>
-            </>:"" }
+                <iframe src={link} width="100%" height="330dvh" className=" ">Loading…</iframe>
+            </>:"Form is now Inactive" }
         </Card>
         
         </>

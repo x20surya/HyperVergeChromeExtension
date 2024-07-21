@@ -39,7 +39,7 @@ function Chatbot() {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer sk-proj-WJiUAL0fd9WaiLzbSZCKT3BlbkFJSOVxdmAxnpHOMq06Bosi",
+              "Bearer YOUR_API_KEY",
           },
         }
       );

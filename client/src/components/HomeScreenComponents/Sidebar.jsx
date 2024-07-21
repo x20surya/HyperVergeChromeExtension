@@ -84,7 +84,7 @@ function Sidebar({ addHandler }) {
               </button>
             </CommandItem>
             <CommandItem>
-              <span>Chat Bot</span>
+              <span>AI Chat Bot</span>
               <button
                 onClick={() => {
                   addHandler("widget7");

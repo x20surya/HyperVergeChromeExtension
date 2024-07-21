@@ -106,6 +106,28 @@ function Sidebar({ addHandler }) {
                 +
               </button>
             </CommandItem>
+            <CommandItem>
+              <span>Issue Tracker</span>
+              <button
+                onClick={() => {
+                  addHandler("widget9");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
+            <CommandItem>
+              <span>Opportunities</span>
+              <button
+                onClick={() => {
+                  addHandler("widget10");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
         </CommandList>

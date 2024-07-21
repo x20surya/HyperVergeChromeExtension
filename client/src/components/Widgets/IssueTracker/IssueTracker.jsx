@@ -54,7 +54,7 @@ const IssueTracker = (props) => {
     return(
         <>
             <form
-            onSubmit={handleSubmit}>
+            onSubmit={handleSubmit} className="h-full">
                 <input
                     placeholder="Author"
                     onChange={(e)=>{setName(e.target.value)}}

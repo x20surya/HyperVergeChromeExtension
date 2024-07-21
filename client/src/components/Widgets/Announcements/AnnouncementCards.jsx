@@ -1,14 +1,19 @@
+import { Badge } from "@/components/ui/badge";
+
 const AnnouncementCards = (props) => {
-    const {heading, text, status} = props
-    return(
+  const { heading, text, status } = props;
+  return (
+    <div className=" pt-4">
+      {status == "Active" ? (
         <>
-        {(status == "Active")?
-        <>
-        <h1>{heading}</h1>
-        <p>{text}</p>
-        <p>{status}</p>
-        </> : ""}
+          <h1 className="text-lg font-bold">{heading}</h1>
+          <p>{text}</p>
+          <Badge variant="destructive">{status}</Badge>
         </>
-    )
-}
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
 export default AnnouncementCards;

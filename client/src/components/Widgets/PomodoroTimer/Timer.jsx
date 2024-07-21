@@ -3,7 +3,7 @@ import PauseButton from "./PauseButton";
 import SettingsButton from "./SettingsButton";
 import { useContext, useState, useEffect, useRef } from "react";
 import SettingsContext from "./SettingsContext";
-import { Button } from "@/components/ui/button";
+import addNotification from "react-push-notification";
 
 const red = "#f54e4e";
 const green = "#4aec8c";
@@ -33,6 +33,11 @@ function Timer() {
           : settingsInfo.breakMinutes) * 60;
 
       setMode(nextMode);
+      addNotification({
+        title: "Mode Switched!",
+        message : "it's time to " + mode,
+        duration : 4000
+      })
       modeRef.current = nextMode;
 
       setSecondsLeft(nextSeconds);

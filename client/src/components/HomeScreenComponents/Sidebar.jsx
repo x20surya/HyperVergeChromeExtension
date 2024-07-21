@@ -17,7 +17,10 @@ import {
   InfoIcon,
   Music2Icon,
   PaperclipIcon,
+  RectangleEllipsisIcon,
   SheetIcon,
+  SliceIcon,
+  SlidersIcon,
   TimerIcon,
 } from "lucide-react";
 
@@ -183,6 +186,20 @@ function Sidebar({ addHandler }) {
               <button
                 onClick={() => {
                   addHandler("widget11");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
+            <CommandItem>
+              <div className="flex items-center">
+                <RectangleEllipsisIcon className="pr-1"/>
+                <span>Slides</span>
+              </div>
+              <button
+                onClick={() => {
+                  addHandler("widget12");
                 }}
                 variant="ghost"
               >

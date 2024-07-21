@@ -26,7 +26,7 @@ function BookQuote() {
         setAuthor(data.author);
       })
       .catch((error) => {
-        console.log("error fetching book quotes");
+        console.log(error);
       });
   }, []);
 

@@ -1,5 +1,5 @@
 const AnnouncementCards = (props) => {
-    const {key, heading, text, status} = props
+    const {heading, text, status} = props
     return(
         <>
         {(status == "Active")?

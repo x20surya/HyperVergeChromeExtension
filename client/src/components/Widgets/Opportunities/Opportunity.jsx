@@ -1,0 +1,67 @@
+import {useEffect, useState } from "react"
+import OpportunityCard from "./OpportunityCard"
+import OpportunityCreate from "./OpportunityCreate"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
+
+const Opportunity = (props) => {
+    const [create, setCreate] = useState(true)
+    const [oppData, setOppData] = useState()
+    
+    const GoogleScriptLink = "https://script.google.com/macros/s/AKfycbzKFtkZ4K94_dRVUfLBBNorHcS2XwLrYKN14sd6GxKxQPJ__9BWU1gGr0rBezoHHqUGjg/exec?action=getOpp"
+
+    const getData = () => {
+        fetch(GoogleScriptLink)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setOppData(data);})
+    }
+
+    useEffect(()=>{
+        getData()
+    },[])
+
+    return(
+        <Card>
+            {(create)?
+            <>
+                {(oppData)?
+                <>
+                    {oppData.slice(0).reverse().map((e)=>{
+                        return(
+                        <OpportunityCard
+                            id = {e.id}
+                            key = {e.id}
+                            title = {e.title}
+                            description = {e.description}
+                            time = {e.time}
+                            status = {e.status}
+                            solvedBy = {e.solvedBy}
+                        />)
+                    })}
+                </>
+                :<>
+                    "Loading…"
+                </>}
+                <button onClick={()=>{getData()}}>Reload</button>
+                <button onClick={() => {
+                    setCreate(false)}}>Create Opportunity</button>
+            </>:
+            <>
+                <OpportunityCreate
+                    setCreate = {setCreate}
+                    getData = {getData}
+                />
+            </>}
+        </Card>
+    )
+}
+
+export default Opportunity

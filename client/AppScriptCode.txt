@@ -1,0 +1,206 @@
+var wbook = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1lpo5sjmf8Y3Zb63mq0zwRN1Xes2umnLR3Gldl8oQ3GE/edit?resourcekey=&gid=0#gid=0')
+var announcementSheet = wbook.getSheetByName('Announcements');
+var formsSheet = wbook.getSheetByName('Forms');
+var sheetsSheet = wbook.getSheetByName('Sheets');
+var oppSheet = wbook.getSheetByName('Opportunities');
+var issueSheet = wbook.getSheetByName('Issues')
+var noticeSheet = wbook.getSheetByName('Notice')
+var quoteSheet = wbook.getSheetByName('Quotes')
+var slideSheet = wbook.getSheetByName('Slide')
+
+
+function doGet(e){
+  var action = e.parameter.action
+  if(action == 'getAnn'){
+    return getAnn(e);
+  }else if(action == "getForm"){
+    return getForm(e);
+  }else if(action == "getSheet"){
+    return getSheet(e);
+  }else if(action == "getOpp"){
+    return getOpp(e)
+  }else if(action == "getNotice"){
+    return getNotice(e)
+  }else if(action == "getQuote"){
+    return getQuote(e)
+  }else if(action == "getSlide"){
+    return getSlide(e)
+  }
+}
+
+function doPost(e){
+  var action = e.parameter.action
+  if(action == "addOpp"){
+    return addOpp(e);
+  }else if(action == "addIssue"){
+    return addIssue(e);
+  }else if(action == "checkIssueStatus"){
+    return checkIssueStatus(e);
+  }
+}
+
+function getSlide(e){
+  var rows = slideSheet.getRange(2,1, slideSheet.getLastRow()-1, slideSheet.getLastColumn()).getValues();
+  var data = [];
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    var record = {}
+
+    record['key'] = row[0]
+    record['name'] = row[1]
+    record['link'] = row[2]
+    data.push(record)
+  }
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}
+
+function getQuote(e){
+  var ran = parseInt(Math.random()*137)
+  var rows = quoteSheet.getRange(2,1, quoteSheet.getLastRow()-1, quoteSheet.getLastColumn()).getValues();
+  var data = [];
+      var row = rows[ran]
+      var record = {}
+      record['key'] = row[0]
+      record['quotw'] = row[1]
+      record['book'] = row[2]
+      record['author'] = row[3]
+      data.push(record)
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}
+
+function checkIssueStatus(e){
+  var user = JSON.parse(e.postData.contents)
+  var key = user.key
+  var rows = issueSheet.getRange(2,1,issueSheet.getLastRow()-1, issueSheet.getLastColumn()).getValues();
+  var data = "";
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    if(row[0] == key){
+      return ContentService.createTextOutput(row[6]).setMimeType(ContentService.MimeType.TEXT)
+    }
+  }
+  return ContentService.createTextOutput("Key Not Found").setMimeType(ContentService.MimeType.TEXT)
+
+}
+
+function getAnn(e){
+  var rows = announcementSheet.getRange(2,1,announcementSheet.getLastRow()-1, announcementSheet.getLastColumn()).getValues();
+  var data = [];
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    var record = {}
+
+    record['key'] = row[0]
+    record['heading'] = row[1]
+    record['message'] = row[2]
+    record['createdAt'] = row[3]
+    record['status'] = row[4]
+
+    data.push(record)
+  }
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}
+
+function getForm(e){
+  var rows = formsSheet.getRange(2,1,formsSheet.getLastRow()-1, formsSheet.getLastColumn()).getValues();
+  var data = [];
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    var record = {}
+
+    record['key'] = row[0]
+    record['name'] = row[1]
+    record['link'] = row[2]
+    record['status'] = row[3]
+
+    data.push(record)
+  }
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}
+
+function getSheet(e){
+  var rows = sheetsSheet.getRange(2,1,sheetsSheet.getLastRow()-1, sheetsSheet.getLastColumn()).getValues();
+  var data = [];
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    var record = {}
+
+    record['key'] = row[0]
+    record['name'] = row[1]
+    record['link'] = row[2]
+    record['status'] = row[3]
+
+    data.push(record)
+  }
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}
+
+function addOpp(e){
+  var user = JSON.parse(e.postData.contents)
+  oppSheet.appendRow([oppSheet.getLastRow(), user.title, user.description, user.time, "pending"])
+  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT)
+}
+
+function getOpp(e){
+  var rows = oppSheet.getRange(2,1,oppSheet.getLastRow()-1, oppSheet.getLastColumn()).getValues();
+  var data = [];
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    var record = {}
+
+    record['id'] = row[0]
+    record['title'] = row[1]
+    record['description'] = row[2]
+    record['time'] = row[3]
+    record['status'] = row[4]
+    record['solvedBy'] = row[5]
+
+    data.push(record)
+  }
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}
+
+function addIssue(e){
+  var user = JSON.parse(e.postData.contents)
+  issueSheet.appendRow([user.id, user.title, user.description, user.name, user.contactInfo, user.time, "pending"])
+  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT)
+}
+
+function getNotice(e){
+  var rows = noticeSheet.getRange(2,1,noticeSheet.getLastRow()-1, noticeSheet.getLastColumn()).getValues();
+  var data = [];
+  for(var i = 0; i < rows.length; i++){
+    var row = rows[i]
+    var record = {}
+
+    record['key'] = row[0]
+    record['heading'] = row[1]
+    record['message'] = row[2]
+    record['createdAt'] = row[3]
+    record['status'] = row[4]
+
+    data.push(record)
+  }
+
+  var result = JSON.stringify(data)
+
+  return ContentService.createTextOutput(result).setMimeType(ContentService.MimeType.JSON)
+}

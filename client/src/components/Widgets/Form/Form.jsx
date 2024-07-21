@@ -29,9 +29,9 @@ const Form = (props) => {
         getData();
     },[])
     return(
-        <>
+        <div>
   {(formData)?(formData.map((e)=>{return(<FormCard key = {e.key} name = {e.name} link = {e.link} status = {e.status}/>)})): "Loading"}
-        </>
+        </div>
     )
 }
 

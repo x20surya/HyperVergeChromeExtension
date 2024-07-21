@@ -1,4 +1,4 @@
-## Overview
+# Overview
 
 This is a chrome extension made in the competition hackIt by hyperVerge, it is a widget manager when you open new tab on chrome
 

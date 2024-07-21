@@ -18,7 +18,7 @@ const FormCard = (props) => {
                 <CardHeader>
                     <CardTitle>{name}</CardTitle>
                 </CardHeader>
-                <iframe src={link} width="640" height="422">Loading…</iframe>
+                <iframe src={link} width="400" height="400">Loading…</iframe>
             </>:"" }
         </Card>
         

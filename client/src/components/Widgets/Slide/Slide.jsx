@@ -13,7 +13,7 @@ const Slide = (props) => {
      enter the spreadsheet link
      and paste the API link in the constant below
     */
-   const GoogleScriptLink = 'https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=getSlide';
+   const GoogleScriptLink = scriptLink + "?action=getSlide";
 
     const getData = () => {
         fetch(GoogleScriptLink)

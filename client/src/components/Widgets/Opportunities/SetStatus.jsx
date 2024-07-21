@@ -1,3 +1,5 @@
+import { scriptLink } from "@/constants/credentials";
+
 const SetStatus = (props) => {
 
     const {id} = props
@@ -17,7 +19,7 @@ const SetStatus = (props) => {
         if(name === "" || des === ""){
             return
         }else{
-            fetch("https://script.google.com/macros/s/AKfycby3NJOvuhFSAgdCErjFmacekmFXSJVigcdvsfThR9zlUZf9boMI1z1pHAxUDMXckOYkXQ/exec?action=addOpp", {
+            fetch(scriptLink + "?action=addOpp", {
                 method : "POST",
                 body : JSON.stringify(obj)
             }).then(()=>{

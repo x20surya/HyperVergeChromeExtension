@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { v4 as uuid } from "uuid";
+import { scriptLink } from "@/constants/credentials";
 
 const IssueTracker = (props) => {
   const [name, setName] = useState("");
@@ -47,12 +48,12 @@ const IssueTracker = (props) => {
       description: des,
       time,
     };
-    
+
     if (name === "" || des === "" || title == "" || contactInfo == "") {
       return;
     } else {
       fetch(
-        "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=addIssue",
+        scriptLink + "?action=addIssue",
         {
           method: "POST",
           body: JSON.stringify(obj),
@@ -75,7 +76,7 @@ const IssueTracker = (props) => {
     } else {
       var obj = { key: id };
       fetch(
-        "https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec?action=checkIssueStatus",
+        scriptLink + "?action=checkIssueStatus",
         {
           method: "POST",
           body: JSON.stringify(obj),

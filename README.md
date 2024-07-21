@@ -1,3 +1,15 @@
+## Overview
+
+This is a chrome extension made in the competition hackIt by hyperVerge, it is a widget manager when you open new tab on chrome
+
+
+#Team
+
+1. Suryanshu Choudhary
+2. Aakrisht Srivastava 
+
+We are from IIITRanchi
+
 # Instructions To Run this repo
 
 `cd client`

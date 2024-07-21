@@ -31,7 +31,7 @@ function BookQuote() {
   }, []);
 
   return (
-    <Card>
+    <Card className="border-none">
       <CardHeader>
         <CardTitle>Book Quote</CardTitle>
         <CardDescription>get a random quote from a book</CardDescription>

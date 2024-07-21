@@ -6,7 +6,7 @@ import { Button } from "./components/ui/button";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="w-full h-screen">
+      <div className="relative flex min-h-screen flex-col bg-background">
         <MainPage />
       </div>
     </ThemeProvider>

@@ -3,6 +3,12 @@ import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { ModeToggle } from "../mode-toggle";
+import {
+  GridContextProvider,
+  GridDropZone,
+  GridItem,
+  swap,
+} from "drag-n-drop-grid";
 
 function MainPage() {
   const [widgets, setWidgets] = useState([]);
@@ -32,24 +38,39 @@ function MainPage() {
     localStorage.setItem("Widgets", JSON.stringify(widgets));
   }, [widgets]);
 
+  function onChange(sourceId, sourceIndex, targetIndex, targetId) {
+    const nextState = swap(widgets, sourceIndex, targetIndex);
+    setWidgets(nextState);
+  }
+
   return (
-    <div className="w-full h-screen">
-      <div className="h-full max-w-full border flex">
-        <div className="flex h-full justify-center p-6 w-1/4 border-r">
+    <div className="flex-1 h-full">
+      <div className="h-full flex w-full">
+        <div className="justify-center p-6 w-1/4 border-r fixed h-screen">
           <Sidebar addHandler={addHandler} />
         </div>
-        <div className="flex flex-col flex-wrap h-full items-center justify-center gap-10 w-3/4">
+        <div className="w-3/4 h-screen overflow-y-auto fixed right-0 p-10">
           <div className="fixed right-5 top-5">
             <ModeToggle />
           </div>
-          {widgets.map((widget) => (
-            <WidgetHandler
-              key={widget.id}
-              id={widget.id}
-              widget={widget.widget}
-              deleteWidget={deleteWidget}
-            />
-          ))}
+          <GridContextProvider onChange={onChange}>
+            <GridDropZone
+              boxesPerRow={3}
+              rowHeight={500}
+              className={`h-[${500 * Math.ceil(widgets.length / 4)}]`}
+            >
+              {widgets.map((widget) => (
+                <GridItem key={widget.id}>
+                  
+                  <WidgetHandler
+                    id={widget.id}
+                    widget={widget.widget}
+                    deleteWidget={deleteWidget}
+                  />
+                </GridItem>
+              ))}
+            </GridDropZone>
+          </GridContextProvider>
         </div>
       </div>
     </div>

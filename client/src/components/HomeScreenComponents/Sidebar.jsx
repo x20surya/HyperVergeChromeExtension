@@ -12,8 +12,8 @@ import {
 function Sidebar({ addHandler }) {
   return (
     <div className="flex flex-col gap-5 w-full items-center">
-      <div className="border w-40 h-10"></div>
-      <Command className="border w-3/4">
+      <div className="w-40 h-10"></div>
+      <Command className="border w-3/4 ">
         <CommandInput placeholder="Search Widget..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -78,6 +78,28 @@ function Sidebar({ addHandler }) {
               <button
                 onClick={() => {
                   addHandler("widget6");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
+            <CommandItem>
+              <span>Chat Bot</span>
+              <button
+                onClick={() => {
+                  addHandler("widget7");
+                }}
+                variant="ghost"
+              >
+                +
+              </button>
+            </CommandItem>
+            <CommandItem>
+              <span>Spotify Music</span>
+              <button
+                onClick={() => {
+                  addHandler("widget8");
                 }}
                 variant="ghost"
               >

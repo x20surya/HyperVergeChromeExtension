@@ -54,7 +54,6 @@ function MainPage() {
           <div className="fixed right-5 top-5">
             <ModeToggle />
           </div>
-          <Notice/>
           <GridContextProvider onChange={onChange}>
             <GridDropZone
               boxesPerRow={3}

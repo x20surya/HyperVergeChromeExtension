@@ -35,8 +35,8 @@ import {
     }, []);
   
     return (
-      <Card className="border-none">
-        <CardHeader>
+      <Card className="h-full overflow-y-auto">
+        <CardHeader className="border-b">
           <CardTitle>Notice Board</CardTitle>
           <CardDescription>Get Latest Updates Here...</CardDescription>
         </CardHeader>

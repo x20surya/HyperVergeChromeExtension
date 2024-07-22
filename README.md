@@ -17,11 +17,13 @@ We are from IIITRanchi
 `npm i --legacy-peer-deps`
 
 replace `scriptLink` with your own script link inside `constants/credentials.js`
-make sure to put the `action` query parameter'
+make sure to not put the `action` query parameter'
 
 for example it should be like this
 
 `https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec` and not like `https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec/?action=getAan`
+
+if you want to run a test, you can the google docs link already provided in a txt file
 
 `npm run build`
 

@@ -1,7 +1,7 @@
 # Overview
 
 This is a chrome extension made in the competition hackIt by hyperVerge, it is a widget manager when you open new tab on chrome
-
+This Chrome Extension is a Widget Manager tool for HyperVerge. It provides various features like Opportunity Board, Annoncement Board, Issue Generator and Tracker and Notice Boards which are vital for coordination among people within a company. We also provide some miscellaneous features like ChatGPT ChatBot Widget, Spotify Music Player, Todo List, Pomodoro Timer, etc which help in boosting efficiency of the employees. 
 
 #Team
 
@@ -42,4 +42,6 @@ Copy the Appscript code from `AppScriptCode.txt` to console
 and deply
 
 change the routes to new one in required pages
+
+
 

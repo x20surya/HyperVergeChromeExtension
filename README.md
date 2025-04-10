@@ -24,7 +24,7 @@ for example it should be like this
 
 `https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec` and not like `https://script.google.com/macros/s/AKfycbw9B7ehedmN8g_k7dLs-GciaU1tSLhGe3Gta5YP7x5B8HpWLl2eJ9x3r08tAV9Vxb60pA/exec/?action=getAan`
 
-if you want to run a test, you can the google docs link already provided in a txt file
+if you want to run a test, you can with the google docs link already provided in a txt file
 
 `npm run build`
 

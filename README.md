@@ -40,7 +40,7 @@ Connect a google project and create OAuth2 credentials
 
 Copy the Appscript code from `AppScriptCode.txt` to console
 
-and deply
+and deploy
 
 change the routes to new one in required pages
 
